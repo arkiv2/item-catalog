@@ -7,6 +7,7 @@
 	- [ ] Read
 	- [ ] Update
 	- [ ] Delete
+	- [ ] Support for migrations
 - [ ] Implement JSON endpoint (API)
 - [ ] Implement Authentication
 	- [ ] Google
