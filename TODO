@@ -1,2 +1,0 @@
-1. Implement templates in views
-2. Implement Form handling and CSRF protection using Flask-WTF
