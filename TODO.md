@@ -7,7 +7,7 @@
 	- [ ] Read
 	- [ ] Update
 	- [ ] Delete
-	- [ ] Support for migrations
+	- [X] Support for migrations - (master 437d865)
 - [ ] Implement JSON endpoint (API)
 - [ ] Implement Authentication
 	- [ ] Google
