@@ -4,6 +4,7 @@ from app import db
 class Category(db.Model):
 	id = db.Column(db.Integer, primary_key = True)
 	name = db.Column(db.String(180), index = True, unique = True)
+	description = db.Column(db.Text)
 	items = db.relationship('Item', backref = 'category') 
 
 	def __repr__(self):
@@ -13,6 +14,7 @@ class Category(db.Model):
 class Item(db.Model):
 	id = db.Column(db.Integer, primary_key = True)
 	name = db.Column(db.String(180), nullable = False, index = True)
+	description = db.Column(db.Text)
 	category_id = db.Column(db.Integer, db.ForeignKey('category.id'))
 
 	def __repr__(self):
