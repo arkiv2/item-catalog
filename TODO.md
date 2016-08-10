@@ -2,7 +2,7 @@
 
 - [ ] Implement templates in views
 - [ ] Implement Form handling and CSRF protection using Flask-WTF
-- [ ] Implement Database
+- [X] Implement Database - (merge b8f7c85)
 	- [ ] Create
 	- [ ] Read
 	- [ ] Update
