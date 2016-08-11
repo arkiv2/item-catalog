@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="/static/css/nav/navigator.min.css"> 
+    	<link rel="stylesheet" href="/static/css/nav/item-catalog-navbar.css">
+   	<link rel="stylesheet" href="/static/css/nav/animation/animation.css">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</html>
+	<title>Front</title>
+</head>
+<body>
+	<div class="container-fluid">
+		{% include 'navbar/navbar.html' %}
+	</div>
+	<div class="container-fluid">
+		{% block content %}
+		{% endblock %}
+	</div>
+	{% include 'scripts.inc' %}
+</body>
+</html>
