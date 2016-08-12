@@ -1,17 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"> 
-	<link rel="stylesheet" href="/static/css/nav/navigator.min.css"> 
-    	<link rel="stylesheet" href="/static/css/nav/item-catalog-navbar.css">
-   	<link rel="stylesheet" href="/static/css/nav/animation/animation.css">
-   	<link rel="stylesheet" type="text/css" href="/static/css/modal/default.css" />
-	<link rel="stylesheet" type="text/css" href="/static/css/modal/component.css" />
-	<link rel="stylesheet" type="text/css" href="/static/css/custom/custom.css" />
-	<script src="/static/js/modal/modernizr.custom.js"></script>
-    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	{% include 'css.inc' %}	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </html>
 	<title>Front</title>
@@ -25,7 +15,7 @@
 			<div class="col-md-3">
 				<p class="lead">CATEGORIES</p>
 			            <div class="panel-group" id="accordion">
-			            	{% for category in categories %}
+			            	{% for category in category_sidebar %}
 						<div class="panel panel-default">
 							<div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#{{ category.name }}">
 								<h4 class="panel-title">
