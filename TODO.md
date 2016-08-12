@@ -1,10 +1,10 @@
 ### Application TODO
 
-- [ ] Implement templates in views
+- [X] Implement templates in views - (merge 6c97c8e)
 - [ ] Implement Form handling and CSRF protection using Flask-WTF
 - [X] Implement Database - (merge b8f7c85)
 	- [ ] Create
-	- [ ] Read
+	- [X] Read - (merge 6c97c8e)
 	- [ ] Update
 	- [ ] Delete
 	- [X] Support for migrations - (master 437d865)
