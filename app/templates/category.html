@@ -2,7 +2,7 @@
 
 {% block content %}
 	<div class ="col-md-9">
-		<p class="lead">LATEST ITEMS</p>
+		<p class="lead">{{ category.name }}</p>
 		{% for item in items %}
 			<button class="md-trigger md-setperspective" data-modal="modal-{{ item.id }}">{{ item.name }}</button>
 		{% endfor %}
@@ -18,7 +18,7 @@
 					<hr>
 					<img src="http://placehold.it/600x300" class="img-rounded img-responsive" alt="Cinque Terre">
 					<hr>
-					<button onclick="location.href='Item/{{  item.slug_name }}'">Go to item page</button>
+					<button onclick="location.href='{{ url_for('item', item_name=item.slug_name) }}'">Go to item page</button>
 					<button class="md-close">Close me!</button>
 				</div>
 			</div>

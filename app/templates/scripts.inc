@@ -25,3 +25,9 @@
         $(document).on('click', '.navbar .dropdown-menu', function(e) {e.stopPropagation();})
     });
 </script>
+
+<script src="/static/js/modal/classie.js"></script>
+<script src="/static/js/modal/modalEffects.js"></script>
+<script src="/static/js/modal/modernizr.custom.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
