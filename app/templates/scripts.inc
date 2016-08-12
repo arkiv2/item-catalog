@@ -25,3 +25,6 @@
         $(document).on('click', '.navbar .dropdown-menu', function(e) {e.stopPropagation();})
     });
 </script>
+
+<script src="/static/js/modal/classie.js"></script>
+<script src="/static/js/modal/modalEffects.js"></script>
