@@ -6,6 +6,10 @@
 	<link rel="stylesheet" href="/static/css/nav/navigator.min.css"> 
     	<link rel="stylesheet" href="/static/css/nav/item-catalog-navbar.css">
    	<link rel="stylesheet" href="/static/css/nav/animation/animation.css">
+   	<link rel="stylesheet" type="text/css" href="/static/css/modal/default.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/modal/component.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/custom/custom.css" />
+	<script src="/static/js/modal/modernizr.custom.js"></script>
     	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,10 +17,10 @@
 	<title>Front</title>
 </head>
 <body>
-	<div class="container-fluid">
+	<div class="container-fluid darker">
 		{% include 'navbar/navbar.html' %}
 	</div>
-	<div class="container-fluid">
+	<div class="container-fluid darker">
 		{% block content %}
 		{% endblock %}
 	</div>
