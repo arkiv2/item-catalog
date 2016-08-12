@@ -1,3 +1,4 @@
+from .. import app
 from unicodedata import normalize
 
 def slugify(text, encoding=None, permitted_chars='abcdefghijklmnopqrstuvwxyz0123456789-'):
