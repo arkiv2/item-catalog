@@ -2,7 +2,7 @@
 
 {% block content %}
 	<div class ="col-md-9">
-		<p class="lead">Boards</p>
+		<p class="lead">{{ category.name }}</p>
 		{% for item in items %}
 			<button class="md-trigger md-setperspective" data-modal="modal-{{ item.id }}">{{ item.name }}</button>
 		{% endfor %}
