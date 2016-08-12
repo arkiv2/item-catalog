@@ -1,8 +1,9 @@
 from app import app
 from flask import render_template
-from models import Category
+from models import Category, Item
 
 @app.route('/')
 def index():
 	categories = Category.query.all()
-	return render_template('index.html', categories=categories) 
+	items = Item.query.all()
+	return render_template('index.html', categories=categories, items=items) 

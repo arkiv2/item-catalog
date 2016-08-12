@@ -3,19 +3,23 @@
 {% block content %}
 <div class="row">
 	<div class="col-md-3">
-		<p class="lead">Categories</p>
+		<p class="lead">CATEGORIES</p>
 	            <div class="panel-group" id="accordion">
 	            	{% for category in categories %}
 				<div class="panel panel-default">
-					<div class="panel-heading">
+					<div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#{{ category.name }}">
 						<h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion" href="#{{ category.name }}">
-						{{ category.name }}</a>
+						<a href="{{ category.name }}">{{ category.name }}</a>
 						</h4>
 					</div>
 					<div id="{{ category.name }}" class="panel-collapse collapse">
-						<div class="panel-body">
+						<div class="panel-body darker">
 							<ul class="list-group">
+								{% if category.items != [] %}
+							            	<li class="list-group-item">
+							            		<a href="{{ category.name }}">Show all {{ category.name }}</a>
+							            	</li>
+								{% endif %}
 								{% for item in category.items if not category.item == [] %}
 							            	<li class="list-group-item">{{ item.name }}</li>
 							            {% endfor %}
@@ -30,7 +34,30 @@
 		</div>
 	</div>
 	<div class ="col-md-9">
-		<p class="lead">Items</p>
+		<p class="lead">LATEST ITEMS</p>
+		{% for item in items %}
+			<button class="md-trigger md-setperspective" data-modal="modal-{{ item.id }}">{{ item.name }}</button>
+		{% endfor %}
+		<div class="md-overlay"></div>
 	</div>
+	<!-- Modals -->
+	{% for item in items %}
+		<div class="md-modal md-effect-1" id="modal-{{ item.id }}">
+			<div class="md-content">
+				<h3>{{ item.name }}</h3>
+				<div>
+					<p>This is a modal window. You can do the following things with it:</p>
+					<hr>
+					<img src="http://placehold.it/600x300" class="img-rounded img-responsive" alt="Cinque Terre">
+					<hr>
+					<button onclick="location.href='{{ url_for('index' )}}'">Go to item page</button>
+					<button class="md-close">Close me!</button>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
 </div>
+
+<script src="/static/js/modal/classie.js"></script>
+<script src="/static/js/modal/modalEffects.js"></script>
 {% endblock %}
