@@ -2,37 +2,7 @@
 
 {% block content %}
 <div class="row">
-	<div class="col-md-3">
-		<p class="lead">CATEGORIES</p>
-	            <div class="panel-group" id="accordion">
-	            	{% for category in categories %}
-				<div class="panel panel-default">
-					<div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#{{ category.name }}">
-						<h4 class="panel-title">
-						<a href="{{ category.name }}">{{ category.name }}</a>
-						</h4>
-					</div>
-					<div id="{{ category.name }}" class="panel-collapse collapse">
-						<div class="panel-body darker">
-							<ul class="list-group">
-								{% if category.items != [] %}
-							            	<li class="list-group-item">
-							            		<a href="{{ category.name }}">Show all {{ category.name }}</a>
-							            	</li>
-								{% endif %}
-								{% for item in category.items if not category.item == [] %}
-							            	<li class="list-group-item">{{ item.name }}</li>
-							            {% endfor %}
-							            {% if category.items == [] %}
-							            	<li class="list-group-item">No items in this category</li>
-							            {% endif %}
-							</ul>
-						</div>
-					</div>
-				</div>
-			{% endfor %}
-		</div>
-	</div>
+	{% include 'sidebar.html' %}
 	<div class ="col-md-9">
 		<p class="lead">LATEST ITEMS</p>
 		{% for item in items %}
@@ -50,7 +20,7 @@
 					<hr>
 					<img src="http://placehold.it/600x300" class="img-rounded img-responsive" alt="Cinque Terre">
 					<hr>
-					<button onclick="location.href='{{ url_for('index' )}}'">Go to item page</button>
+					<button onclick="location.href='Item/{{  item.slug_name }}'">Go to item page</button>
 					<button class="md-close">Close me!</button>
 				</div>
 			</div>
