@@ -25,8 +25,8 @@ def category(category_name):
 
 @app.route('/item')
 def item_index():
-	items = Item.query.all()
-	return render_template('items.html', items=items)
+	categories = Category.query.all()
+	return render_template('items.html', categories=categories)
 
 @app.route('/item/<item_name>')
 def item(item_name):
