@@ -18,20 +18,20 @@
 			            	{% for category in category_sidebar %}
 						<div class="panel panel-default">
 							<div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#{{ category.name }}">
-								<h4 class="panel-title">
-								<a href="{{ category.name }}">{{ category.name }}</a>
-								</h4>
+								<h4 class="panel-title">{{ category.name }}</h4>
 							</div>
 							<div id="{{ category.name }}" class="panel-collapse collapse">
 								<div class="panel-body darker">
 									<ul class="list-group">
 										{% if category.items != [] %}
 									            	<li class="list-group-item">
-									            		<a href="{{ category.name }}">Show all {{ category.name }}</a>
+									            		<a href="{{ url_for('category', category_name=category.slug_name) }}"><b>Show all {{ category.name }}</b></a>
 									            	</li>
 										{% endif %}
 										{% for item in category.items if not category.item == [] %}
-									            	<li class="list-group-item">{{ item.name }}</li>
+									            	<li class="list-group-item">
+									            		<a href="{{ url_for('item', item_name=item.slug_name) }}">{{ item.name }}</a>
+									            	</li>
 									            {% endfor %}
 									            {% if category.items == [] %}
 									            	<li class="list-group-item">No items in this category</li>
