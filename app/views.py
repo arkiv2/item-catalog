@@ -15,12 +15,13 @@ def index():
 @app.route('/category')
 def category_index():
 	categories = Category.query.all()
-	return render_template('categories.html')
+	return render_template('categories.html', categories=categories)
 
 @app.route('/category/<category_name>')
 def category(category_name):
 	category = Category.query.filter_by(slug_name=category_name).first_or_404()
-	return render_template('category')
+	items = category.items
+	return render_template('category.html', category=category, items=items)
 
 @app.route('/item')
 def item_index():
