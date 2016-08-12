@@ -1,8 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="row">
-	{% include 'sidebar.html' %}
 	<div class ="col-md-9">
 		<p class="lead">LATEST ITEMS</p>
 		{% for item in items %}
@@ -26,8 +24,4 @@
 			</div>
 		</div>
 	{% endfor %}
-</div>
-
-<script src="/static/js/modal/classie.js"></script>
-<script src="/static/js/modal/modalEffects.js"></script>
 {% endblock %}
